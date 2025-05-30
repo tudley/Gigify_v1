@@ -1,0 +1,8 @@
+<h1>Welcome</h1>
+{% for event in events %}
+  <p>success!</p>
+  <p>{{event['event name']}}</p>
+  <p>{{event['artist']['name']}}</p>
+  <img src="{{ event['artist']['picture'] }}">
+  <p>{{event['date']}}</p>
+{% endfor %}`           

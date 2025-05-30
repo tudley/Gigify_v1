@@ -1,0 +1,26 @@
+<body>
+    <h1>Search results for TicketMaster</h1>
+    {% if context %}
+        {% for event in context %}
+            <div class="event-card">
+                <h2>{{ event["event name"] }}</h2>
+                <p><strong>Date:</strong> {{ event["date"] }}</p>
+
+                {% if event["artist"] %}
+                    <p><strong>Artist:</strong> {{ event["artist"]["artist name"] }}</p>
+                    {% if event["artist"]["spotify_link"] %}
+                        <p><a href="{{ event['artist']['spotify_link'] }}" target="_blank">Listen on Spotify</a></p>
+                    {% endif %}
+                {% elif event["artist name"] %}
+                    <p><strong>Artist:</strong> {{ event["artist name"] }}</p>
+                {% endif %}
+
+                <p><strong>Venue:</strong> {{ event["venue"]["venue name"] }}</p>
+                <p><strong>Address:</strong> {{ event["venue"]["address"] or 'Unknown' }}</p>
+                <p><strong>Location:</strong> Lat {{ event["venue"]["lat"] }}, Long {{ event["venue"]["long"] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No events found.</p>
+    {% endif %}
+</body>

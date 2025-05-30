@@ -1,0 +1,42 @@
+<h1>Ticketmaster Home</h1>
+
+<p>Lets find some concerts relevant to you.</p>
+<p>Please adjust the following parameters:</p>
+
+<form action="{{ url_for('get_events_tm') }}" method="post">
+  <label for="city">City Name:</label>
+  <input type="text" id="city" name="city"><br><br>
+
+  <!-- Dropdown -->
+  <label for="radius">Search radius:</label>
+  <select id="radius" name="radius">
+    <option value="">0</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+  </select><br><br>
+
+    <!-- Dropdown -->
+  <label for="unit">Units:</label>
+  <select id="unit" name="unit">
+    <option value="miles">Miles</option>
+    <option value="kilometers">Kilometers</option>
+  </select><br><br>
+
+  <!-- Date picker -->
+  <label for="date_from">Date (from):</label>
+  <input type="date" id="date_from" name="date_from"><br><br>
+
+    <!-- Date picker -->
+  <label for="date_to">Date (to):</label>
+  <input type="date" id="date_to" name="date_to"><br><br>
+
+  <!-- Checkbox -->
+  <label>
+    <input type="checkbox" name="free_only" value="yes">
+    Show free events only
+  </label><br><br>
+
+  <!-- Submit button -->
+  <button type="submit">Search Events</button>
+</form>

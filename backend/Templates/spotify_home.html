@@ -1,0 +1,6 @@
+<h1>Welcome to the Spotify side of things</h1>
+<p>Please, enter a name of an artist and lets find out a little about them...</p>
+<form action = "{{ url_for ('get_artist')}}" method = "post">
+    <input type = "text" name="artist_name" placeholder="Enter Artist name" required>
+    <button type = "submit">Search</button>
+</form>

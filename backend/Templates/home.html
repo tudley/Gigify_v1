@@ -1,0 +1,30 @@
+<h1>Welcome to Gigify</h1>
+
+<h3>Currently under contruction, this app:</h3>
+<ul>
+    <p>Extracts your location from your ip</p>
+    <p>Queries Ticketmaster for your local gigs</p>
+    <p>Queries Spotify to get more information on these artists</p>
+</ul>
+
+<h3>Planned upgrades:</h3>
+<ul>
+    <li><p>Connects to your spotify</p></li>
+    <li><p>Creates a playlist based on upcoming local music</p></li>
+    <li><p>Tailor the gig choices to your taste</p></li>
+</ul>
+
+<h3>Ready to see what's playing in your local area?</h3>
+<h4>Let Flask automate this search for you as a:</h4>
+<a href = "{{ url_for('get_events_api') }}">API response</a> | <a href = "{{ url_for('get_events_web')}}">Web View</a>
+
+<p>Or explore the individual features through the <a href="{{ url_for('playground')}}">Playground</a></p>
+
+<h3>NOTE:</h3>
+
+<p>Please ensure you have your .env file populated with keys from:</p>
+<ul>
+    <li><a href = "https://ipinfo.io/">ipinfo.io</a></li>
+    <li><a href = "https://developer.spotify.com/">Spofify</a></li>
+    <li><a href = "https://developer.ticketmaster.com/">Ticketmaster</a></li>
+</ul>
